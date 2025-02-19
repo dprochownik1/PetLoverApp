@@ -1,6 +1,6 @@
 ﻿namespace ProductApi.Products.GetProductsByCategory.RequestHandling;
 
-public class GetProductsByCategoryQueryValidator : AbstractValidator<CreateProductCommand>
+public class GetProductsByCategoryQueryValidator : AbstractValidator<GetProductsByCategoryQuery>
 {
     public GetProductsByCategoryQueryValidator()
     {
