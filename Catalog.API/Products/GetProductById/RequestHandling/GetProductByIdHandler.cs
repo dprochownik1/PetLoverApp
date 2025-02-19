@@ -1,8 +1,4 @@
-﻿namespace Catalog.API.Products.GetProductById;
-
-public record GetProductByIdQuery(Guid Id) : IQuery<GetProductByIdResult>;
-
-public record GetProductByIdResult(ProductDto Product);
+﻿namespace Catalog.API.Products.GetProductById.RequestHandling;
 
 internal class GetProductByIdHandler(IDocumentSession session) : IQueryHandler<GetProductByIdQuery, GetProductByIdResult>
 {
