@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{90
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{BABBFC17-7D08-488C-9227-B3B254ABB423}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApi", "Catalog.API\ProductApi.csproj", "{D05FEEEE-6CCE-406F-BF82-50E3A85E8A12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApi", "ProductApi\ProductApi.csproj", "{D05FEEEE-6CCE-406F-BF82-50E3A85E8A12}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D0347219-9AAC-425D-BDF3-7C9806100EE8}"
 EndProject

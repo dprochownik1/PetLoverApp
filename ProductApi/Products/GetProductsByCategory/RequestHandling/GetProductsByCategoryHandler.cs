@@ -6,7 +6,7 @@ internal class GetProductsByCategoryHandler(IDocumentSession session) : IQueryHa
     {
         var products = await session.Query<Product>()
             .Where(product => product.Category == query.Category)
-            .ToListAsync(cancellationToken);
+            .ToPagedListAsync(query.PageNumber ?? 1, query.PageNumber ?? 15, cancellationToken);
 
         return new GetProductsByCategoryResult(products.Adapt<IEnumerable<ProductDto>>());
     }
