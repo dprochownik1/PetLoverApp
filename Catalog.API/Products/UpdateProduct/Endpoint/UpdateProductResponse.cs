@@ -1,3 +1,3 @@
-﻿namespace Catalog.API.Products.UpdateProduct.Endpoint;
+﻿namespace ProductApi.Products.UpdateProduct.Endpoint;
 
 public record UpdateProductResponse(bool IsSuccess);

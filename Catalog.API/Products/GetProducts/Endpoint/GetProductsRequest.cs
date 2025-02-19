@@ -1,3 +1,3 @@
-﻿namespace Catalog.API.Products.GetProducts.Endpoint;
+﻿namespace ProductApi.Products.GetProducts.Endpoint;
 
 public record GetProductsRequest(int? PageNumber = 1, int? PageSize = 15);

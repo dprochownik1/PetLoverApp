@@ -1,6 +1,6 @@
-﻿using Catalog.API.Products.CreateProduct.RequestHandling;
+﻿using ProductApi.Products.CreateProduct.RequestHandling;
 
-namespace Catalog.API.Products.CreateProduct.Endpoint;
+namespace ProductApi.Products.CreateProduct.Endpoint;
 
 public class CreateProductEndpoint : ICarterModule
 {

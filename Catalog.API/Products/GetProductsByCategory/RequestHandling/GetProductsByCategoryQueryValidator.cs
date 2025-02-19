@@ -1,4 +1,4 @@
-﻿namespace Catalog.API.Products.GetProductsByCategory.RequestHandling;
+﻿namespace ProductApi.Products.GetProductsByCategory.RequestHandling;
 
 public class GetProductsByCategoryQueryValidator : AbstractValidator<CreateProductCommand>
 {

@@ -1,6 +1,6 @@
 ﻿using Common.Lib.Exceptions;
 
-namespace Catalog.API.Exceptions;
+namespace ProductApi.Exceptions;
 
 public class ProductNotFoundException : NotFoundException
 {

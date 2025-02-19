@@ -1,3 +1,3 @@
-﻿namespace Catalog.API.Products.GetProductsByCategory.Endpoint;
+﻿namespace ProductApi.Products.GetProductsByCategory.Endpoint;
 
 public record GetProductsByCategoryRequest(string Category);

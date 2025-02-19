@@ -1,4 +1,4 @@
-﻿namespace Catalog.API.Products.GetProducts.RequestHandling;
+﻿namespace ProductApi.Products.GetProducts.RequestHandling;
 
 internal class GetProductsHandler(IDocumentSession session) : IQueryHandler<GetProductsQuery, GetProductsResult>
 {

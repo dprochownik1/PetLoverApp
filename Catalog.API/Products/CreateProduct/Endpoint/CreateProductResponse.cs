@@ -1,3 +1,3 @@
-﻿namespace Catalog.API.Products.CreateProduct.Endpoint;
+﻿namespace ProductApi.Products.CreateProduct.Endpoint;
 
 public record CreateProductResponse(Guid Id);

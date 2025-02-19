@@ -1,3 +1,3 @@
-﻿namespace Catalog.API.Products.GetProductById.RequestHandling;
+﻿namespace ProductApi.Products.GetProductById.RequestHandling;
 
 public record GetProductByIdResult(ProductDto Product);

@@ -1,6 +1,6 @@
-﻿using Catalog.API.Products.UpdateProduct.RequestHandling;
+﻿using ProductApi.Products.UpdateProduct.RequestHandling;
 
-namespace Catalog.API.Products.UpdateProduct.Endpoint;
+namespace ProductApi.Products.UpdateProduct.Endpoint;
 
 public class UpdateProductEndpoint : ICarterModule
 {

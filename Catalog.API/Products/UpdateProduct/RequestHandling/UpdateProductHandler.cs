@@ -1,4 +1,4 @@
-﻿namespace Catalog.API.Products.UpdateProduct.RequestHandling;
+﻿namespace ProductApi.Products.UpdateProduct.RequestHandling;
 
 internal class UpdateProductHandler(IDocumentSession session)
     : ICommandHandler<UpdateProductCommand, UpdateProductResult>

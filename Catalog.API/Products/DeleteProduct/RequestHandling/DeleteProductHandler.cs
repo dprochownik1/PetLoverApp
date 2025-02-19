@@ -1,4 +1,4 @@
-﻿namespace Catalog.API.Products.DeleteProduct.RequestHandling;
+﻿namespace ProductApi.Products.DeleteProduct.RequestHandling;
 
 internal class DeleteProductHandler(IDocumentSession session) : ICommandHandler<DeleteProductCommand, DeleteProductResult>
 {

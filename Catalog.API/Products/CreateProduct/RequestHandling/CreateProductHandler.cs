@@ -1,4 +1,4 @@
-﻿namespace Catalog.API.Products.CreateProduct.RequestHandling;
+﻿namespace ProductApi.Products.CreateProduct.RequestHandling;
 
 internal class CreateProductHandler(IDocumentSession session) : ICommandHandler<CreateProductCommand, CreateProductResult>
 {

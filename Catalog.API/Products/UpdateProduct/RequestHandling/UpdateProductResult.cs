@@ -1,3 +1,3 @@
-﻿namespace Catalog.API.Products.UpdateProduct.RequestHandling;
+﻿namespace ProductApi.Products.UpdateProduct.RequestHandling;
 
 public record UpdateProductResult(bool IsSuccess);

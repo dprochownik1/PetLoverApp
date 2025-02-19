@@ -1,6 +1,6 @@
-﻿using Catalog.API.Products.DeleteProduct.RequestHandling;
+﻿using ProductApi.Products.DeleteProduct.RequestHandling;
 
-namespace Catalog.API.Products.DeleteProduct.Endpoint;
+namespace ProductApi.Products.DeleteProduct.Endpoint;
 
 public class DeleteProductEndpoint : ICarterModule
 {

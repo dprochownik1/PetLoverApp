@@ -1,6 +1,6 @@
 ﻿using Marten.Schema;
 
-namespace Catalog.API.Data;
+namespace ProductApi.Data;
 
 public class CatalogDbInitialData : IInitialData
 {

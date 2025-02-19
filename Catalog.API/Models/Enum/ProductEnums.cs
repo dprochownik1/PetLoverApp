@@ -1,4 +1,4 @@
-﻿namespace Catalog.API.Models.Enum;
+﻿namespace ProductApi.Models.Enum;
 
 internal enum Category
 {

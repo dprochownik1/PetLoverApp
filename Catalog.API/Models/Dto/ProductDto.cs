@@ -1,4 +1,4 @@
-﻿namespace Catalog.API.Models.Dto;
+﻿namespace ProductApi.Models.Dto;
 
 public record ProductDto(
     Guid Id,

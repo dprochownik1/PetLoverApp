@@ -1,6 +1,6 @@
-﻿using Catalog.API.Products.GetProducts.RequestHandling;
+﻿using ProductApi.Products.GetProducts.RequestHandling;
 
-namespace Catalog.API.Products.GetProducts.Endpoint;
+namespace ProductApi.Products.GetProducts.Endpoint;
 
 public class GetProductsEndpoint : ICarterModule
 {
