@@ -1,0 +1,12 @@
+﻿global using CartApi.Data;
+global using CartApi.Exceptions;
+global using CartApi.Models;
+global using Common.Lib.CQRS;
+global using Carter;
+global using MediatR;
+global using Mapster;
+global using FluentValidation;
+global using Common.Lib.Behaviors;
+global using Common.Lib.Exceptions;
+global using Marten;
+global using Common.Lib.Exceptions.Handler;
