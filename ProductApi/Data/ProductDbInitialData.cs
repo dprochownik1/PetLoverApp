@@ -2,7 +2,7 @@
 
 namespace ProductApi.Data;
 
-public class CatalogDbInitialData : IInitialData
+public class ProductDbInitialData : IInitialData
 {
     public async Task Populate(IDocumentStore store, CancellationToken cancellationToken)
     {
@@ -11,7 +11,7 @@ public class CatalogDbInitialData : IInitialData
         if (await session.Query<Product>().AnyAsync(cancellationToken))
             return;
 
-        //This is UPSERT operation
+        //This is an UPSERT operation
         session.Store(GetInitialProducts());
         await session.SaveChangesAsync(cancellationToken);
     }

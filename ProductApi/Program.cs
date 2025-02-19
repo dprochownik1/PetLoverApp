@@ -22,7 +22,7 @@ builder.Services.AddMarten(opts =>
 
 if (builder.Environment.IsDevelopment())
 {
-    builder.Services.InitializeMartenWith<CatalogDbInitialData>();
+    builder.Services.InitializeMartenWith<ProductDbInitialData>();
 }
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();

@@ -1,0 +1,12 @@
+﻿global using Common.Lib.Exceptions.Handler;
+global using Common.Lib.Behaviors;
+global using Common.Lib.CQRS;
+global using FluentValidation;
+global using Marten.Pagination;
+global using Marten;
+global using Carter;
+global using Mapster;
+global using MediatR;
+global using PetApi.Exceptions;
+global using PetApi.Models;
+global using PetApi.Models.Dto;

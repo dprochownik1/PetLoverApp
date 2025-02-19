@@ -1,14 +1,26 @@
 version: '3.4'
 
 services:
-  catalogdb:
+  productdb:
     image: postgres
 
-  catalog.api:
-    image: ${DOCKER_REGISTRY-}catalogapi
+  petdb:
+    image: postgres
+
+  productapi:
+    image: ${DOCKER_REGISTRY-}productapi
     build:
       context: .
-      dockerfile: Catalog.API/Dockerfile
+      dockerfile: ProductApi/Dockerfile
+
+  petapi:
+    image: ${DOCKER_REGISTRY-}petapi
+    build:
+      context: .
+      dockerfile: PetApi/Dockerfile
 
 volumes: 
-  postgres_catalog:
+  postgres_product:
+  postgres_pet:
+
+
