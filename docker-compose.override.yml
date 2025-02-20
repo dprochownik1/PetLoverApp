@@ -37,6 +37,18 @@ services:
     volumes:
       - postgres_cart:/var/lib/postgresql/data/
 
+  customerdb:
+    container_name: customerdb
+    environment:
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
+     - POSTGRES_DB=CustomerDb
+    restart: always
+    ports:
+       - "5435:5432"
+    volumes:
+      - postgres_customer:/var/lib/postgresql/data/
+
   productapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
@@ -44,7 +56,7 @@ services:
     depends_on:
       - productdb
     ports:
-      - "6000:8080"
+      - "6003:8080"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
@@ -68,7 +80,20 @@ services:
     depends_on:
       - cartdb
     ports:
-      - "5003:8080"
+      - "6003:8080"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+  customerapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+    depends_on:
+      - customerdb
+    ports:
+      - "6004:8080"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro

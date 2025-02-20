@@ -7,7 +7,8 @@
         "catalog.api": "StartDebugging",
         "productapi": "StartDebugging",
         "petapi": "StartDebugging",
-        "cartapi": "StartDebugging"
+        "cartapi": "StartDebugging",
+        "customerapi": "StartDebugging"
       }
     }
   }

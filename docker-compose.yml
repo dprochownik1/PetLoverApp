@@ -10,6 +10,9 @@ services:
   cartdb:
     image: postgres
 
+  customerdb:
+    image: postgres
+
   productapi:
     image: ${DOCKER_REGISTRY-}productapi
     build:
@@ -28,10 +31,18 @@ services:
       context: ..
       dockerfile: PetLoverApp/Services/CartApi/Dockerfile
 
+  customerapi:
+    image: ${DOCKER_REGISTRY-}customerapi
+    build:
+      context: .
+      dockerfile: Services/CustomerApi/Dockerfile
+
 volumes: 
   postgres_product:
   postgres_pet:
   postgres_cart:
+  postgres_customer:
+
 
 
 

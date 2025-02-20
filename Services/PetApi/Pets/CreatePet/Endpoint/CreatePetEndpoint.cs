@@ -6,7 +6,7 @@ public class CreatePetEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("pets", async (CreatePetRequest request, ISender sender) =>
+        app.MapPost("/pets", async (CreatePetRequest request, ISender sender) =>
             {
                 var command = request.Adapt<CreatePetCommand>();
                 var result = await sender.Send(command);
