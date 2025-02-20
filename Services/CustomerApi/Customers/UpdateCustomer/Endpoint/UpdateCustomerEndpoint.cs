@@ -14,7 +14,7 @@ public class UpdateCustomerEndpoint : ICarterModule
 
                 return Results.Ok(result.Adapt<UpdateCustomerResponse>());
             })
-            .WithName("CreateCustomer")
+            .WithName("UpdateCustomer")
             .Produces<UpdateCustomerResponse>()
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status404NotFound)

@@ -9,11 +9,11 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ProductApi/ProductApi.csproj", "ProductApi/"]
+COPY ["Services/ProductApi/ProductApi.csproj", "Services/ProductApi/"]
 COPY ["Common.Lib/Common.Lib.csproj", "Common.Lib/"]
-RUN dotnet restore "./ProductApi/ProductApi.csproj"
+RUN dotnet restore "./Services/ProductApi/ProductApi.csproj"
 COPY . .
-WORKDIR "/src/ProductApi"
+WORKDIR "/src/Services/ProductApi"
 RUN dotnet build "./ProductApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

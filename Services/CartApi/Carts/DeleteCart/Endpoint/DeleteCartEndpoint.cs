@@ -6,7 +6,7 @@ public class DeleteCartEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapDelete("/cart/{userName}",
+        app.MapDelete("/cart/{customerId}",
                 async ([AsParameters] DeleteCartRequest request, ISender sender) =>
             {
                 var command = request.Adapt<DeleteCartCommand>();

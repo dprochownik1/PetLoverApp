@@ -6,7 +6,7 @@ public class GetPetsByCustomerEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("/products/category/{category}", async ([AsParameters] GetPetsByCustomerRequest request, ISender sender) =>
+        app.MapGet("/pets/customer/{customerId}", async ([AsParameters] GetPetsByCustomerRequest request, ISender sender) =>
             {
                 var query = request.Adapt<GetPetsByCustomerQuery>();
                 var result = await sender.Send(query);

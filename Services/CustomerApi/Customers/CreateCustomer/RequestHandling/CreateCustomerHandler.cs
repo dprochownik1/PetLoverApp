@@ -4,7 +4,7 @@ public class CreateCustomerHandler(IDocumentSession session) : ICommandHandler<C
 {
     public async Task<CreateCustomerResult> Handle(CreateCustomerCommand command, CancellationToken cancellationToken)
     {
-        var customer = command.CustomerDto.Adapt<Customer>();
+        var customer = command.Customer.Adapt<Customer>();
         session.Store(customer);
         await session.SaveChangesAsync(cancellationToken);
 

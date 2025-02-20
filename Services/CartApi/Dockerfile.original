@@ -9,17 +9,18 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Product.API/Product.API.csproj", "Product.API/"]
-RUN dotnet restore "./Product.API/Product.API.csproj"
+COPY ["PetLoverApp/Services/CartApi/CartApi.csproj", "PetLoverApp/Services/CartApi/"]
+COPY ["PetLoverApp/Common.Lib/Common.Lib.csproj", "PetLoverApp/Common.Lib/"]
+RUN dotnet restore "./PetLoverApp/Services/CartApi/CartApi.csproj"
 COPY . .
-WORKDIR "/src/Product.API"
-RUN dotnet build "./Product.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/PetLoverApp/Services/CartApi"
+RUN dotnet build "./CartApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Product.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./CartApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Product.API.dll"]
+ENTRYPOINT ["dotnet", "CartApi.dll"]

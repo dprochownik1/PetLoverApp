@@ -6,7 +6,7 @@ public class DeleteCustomerEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapDelete("/customers/{id}", async ([AsParameters] DeleteCustomerRequest request, ISender sender) =>
+        app.MapDelete("/customers/{customerId}", async ([AsParameters] DeleteCustomerRequest request, ISender sender) =>
             {
                 var command = request.Adapt<DeleteCustomerCommand>();
                 var result = await sender.Send(command);

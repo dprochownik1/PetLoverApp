@@ -13,8 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{BABB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApi", "Services\ProductApi\ProductApi.csproj", "{D05FEEEE-6CCE-406F-BF82-50E3A85E8A12}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D0347219-9AAC-425D-BDF3-7C9806100EE8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pet", "Pet", "{CB5A77F1-16BC-402C-BCE3-2FC6870885EF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetApi", "Services\PetApi\PetApi.csproj", "{984CB22D-9E61-4E7D-A7BD-8AE8543C4898}"
@@ -26,6 +24,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cart", "Cart", "{34C59E21-3AD0-406C-B06C-6D9923FA2E47}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartApi", "Services\CartApi\CartApi.csproj", "{6A01166F-ABA9-447B-A7F3-4424BFA3CDC5}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1FD613E4-9493-4A15-9D68-4DC4EDC652FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,6 @@ Global
 		{D05FEEEE-6CCE-406F-BF82-50E3A85E8A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D05FEEEE-6CCE-406F-BF82-50E3A85E8A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D05FEEEE-6CCE-406F-BF82-50E3A85E8A12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0347219-9AAC-425D-BDF3-7C9806100EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0347219-9AAC-425D-BDF3-7C9806100EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0347219-9AAC-425D-BDF3-7C9806100EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0347219-9AAC-425D-BDF3-7C9806100EE8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{984CB22D-9E61-4E7D-A7BD-8AE8543C4898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{984CB22D-9E61-4E7D-A7BD-8AE8543C4898}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{984CB22D-9E61-4E7D-A7BD-8AE8543C4898}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +53,10 @@ Global
 		{6A01166F-ABA9-447B-A7F3-4424BFA3CDC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A01166F-ABA9-447B-A7F3-4424BFA3CDC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A01166F-ABA9-447B-A7F3-4424BFA3CDC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FD613E4-9493-4A15-9D68-4DC4EDC652FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FD613E4-9493-4A15-9D68-4DC4EDC652FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FD613E4-9493-4A15-9D68-4DC4EDC652FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FD613E4-9493-4A15-9D68-4DC4EDC652FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

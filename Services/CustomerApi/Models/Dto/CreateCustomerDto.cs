@@ -1,7 +1,6 @@
 ﻿namespace CustomerApi.Models.Dto;
 
-public record CustomerDto(
-    Guid Id,
+public record CreateCustomerDto(
     Guid CustomerId,
     string Name,
     string LastName,

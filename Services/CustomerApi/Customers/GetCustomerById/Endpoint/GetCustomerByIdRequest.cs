@@ -1,3 +1,3 @@
 ﻿namespace CustomerApi.Customers.GetCustomerById.Endpoint;
 
-public record GetCustomerByIdRequest(Guid Id);
+public record GetCustomerByIdRequest(Guid CustomerId);

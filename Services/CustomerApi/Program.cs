@@ -1,3 +1,5 @@
+using CustomerApi.Customers.DeleteCustomer.Data.Extensions;
+using CustomerApi.Customers.GetCustomerById.Data.Extensions;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
@@ -19,6 +21,11 @@ builder.Services.AddMarten(opts =>
 {
     opts.Connection(connection);
 }).UseLightweightSessions();
+
+builder.Services.Configure<ServiceUrlConfiguration>(builder.Configuration.GetSection(nameof(ServiceUrlConfiguration)));
+builder.Services
+    .AddGetPetsByCustomerApiClient()
+    .AddDeletePetsByCustomerApiClient();
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddHealthChecks().AddNpgSql(connection);

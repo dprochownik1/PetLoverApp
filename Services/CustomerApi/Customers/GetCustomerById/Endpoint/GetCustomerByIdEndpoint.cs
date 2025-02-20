@@ -6,7 +6,7 @@ public class GetCustomerByIdEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("/customers/{id}", async ([AsParameters] GetCustomerByIdRequest request, ISender sender) =>
+        app.MapGet("/customers/{customerId}", async ([AsParameters] GetCustomerByIdRequest request, ISender sender) =>
             {
                 var query = request.Adapt<GetCustomerByIdQuery>();
                 var result = await sender.Send(query);

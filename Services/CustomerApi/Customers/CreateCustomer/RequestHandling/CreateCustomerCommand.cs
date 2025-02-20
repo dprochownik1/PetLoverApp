@@ -1,3 +1,3 @@
 ﻿namespace CustomerApi.Customers.CreateCustomer.RequestHandling;
 
-public record CreateCustomerCommand(CustomerDto CustomerDto) : ICommand<CreateCustomerResult>;
+public record CreateCustomerCommand(CreateCustomerDto Customer) : ICommand<CreateCustomerResult>;

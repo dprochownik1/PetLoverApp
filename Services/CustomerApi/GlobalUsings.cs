@@ -5,6 +5,7 @@ global using FluentValidation;
 global using Marten;
 global using Carter;
 global using Common.Lib.Exceptions;
+global using CustomerApi.Configuration;
 global using CustomerApi.Exceptions;
 global using CustomerApi.Models;
 global using CustomerApi.Models.Dto;

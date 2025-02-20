@@ -4,7 +4,7 @@ public class UpdateCustomerCommandValidator : AbstractValidator<UpdateCustomerCo
 {
     public UpdateCustomerCommandValidator()
     {
-        RuleFor(x => x.CustomerDto).NotEmpty().WithMessage("CustomerDto must not be null");
+        RuleFor(x => x.CustomerDto).NotEmpty().WithMessage("Customer must not be null");
         RuleFor(x => x.CustomerDto.Name).NotEmpty().MaximumLength(20);
         RuleFor(x => x.CustomerDto.LastName).NotEmpty().MaximumLength(20);
         RuleFor(x => x.CustomerDto.Address).NotEmpty().WithMessage("Address must not be null");

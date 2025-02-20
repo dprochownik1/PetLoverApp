@@ -9,11 +9,11 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["PetLoverApp/Services/CartApi/CartApi.csproj", "PetLoverApp/Services/CartApi/"]
-COPY ["PetLoverApp/Common.Lib/Common.Lib.csproj", "PetLoverApp/Common.Lib/"]
-RUN dotnet restore "./PetLoverApp/Services/CartApi/CartApi.csproj"
+COPY ["Services/CartApi/CartApi.csproj", "Services/CartApi/"]
+COPY ["Common.Lib/Common.Lib.csproj", "Common.Lib/"]
+RUN dotnet restore "./Services/CartApi/CartApi.csproj"
 COPY . .
-WORKDIR "/src/PetLoverApp/Services/CartApi"
+WORKDIR "/src/Services/CartApi"
 RUN dotnet build "./CartApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

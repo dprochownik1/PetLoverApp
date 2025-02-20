@@ -1,3 +1,3 @@
 ﻿namespace CustomerApi.Customers.CreateCustomer.Endpoint;
 
-public record CreateCustomerRequest(CustomerDto CustomerDto);
+public record CreateCustomerRequest(CreateCustomerDto Customer);

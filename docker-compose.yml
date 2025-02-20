@@ -17,19 +17,19 @@ services:
     image: ${DOCKER_REGISTRY-}productapi
     build:
       context: .
-      dockerfile: ProductApi/Dockerfile
+      dockerfile: Services/ProductApi/Dockerfile
 
   petapi:
     image: ${DOCKER_REGISTRY-}petapi
     build:
       context: .
-      dockerfile: PetApi/Dockerfile
+      dockerfile: Services/PetApi/Dockerfile
 
   cartapi:
     image: ${DOCKER_REGISTRY-}cartapi
     build:
-      context: ..
-      dockerfile: PetLoverApp/Services/CartApi/Dockerfile
+      context: .
+      dockerfile: Services/CartApi/Dockerfile
 
   customerapi:
     image: ${DOCKER_REGISTRY-}customerapi

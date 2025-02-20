@@ -6,7 +6,7 @@ public class GetPetsEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("pets/", async (ISender sender) =>
+        app.MapGet("/pets", async (ISender sender) =>
             {
                 var result = await sender.Send(new GetPetsQuery());
 

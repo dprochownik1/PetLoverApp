@@ -9,11 +9,11 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["PetApi/PetApi.csproj", "PetApi/"]
+COPY ["Services/PetApi/PetApi.csproj", "Services/PetApi/"]
 COPY ["Common.Lib/Common.Lib.csproj", "Common.Lib/"]
-RUN dotnet restore "./PetApi/PetApi.csproj"
+RUN dotnet restore "./Services/PetApi/PetApi.csproj"
 COPY . .
-WORKDIR "/src/PetApi"
+WORKDIR "/src/Services/PetApi"
 RUN dotnet build "./PetApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

@@ -16,7 +16,7 @@ public class GetCartByCustomerEndpoint : ICarterModule
 
                 return Results.Ok(response);
             })
-            .WithName("GetCart")
+            .WithName("GetCartByCustomer")
             .Produces<GetCartByCustomerResponse>()
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesValidationProblem();
