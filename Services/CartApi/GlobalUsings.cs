@@ -1,4 +1,4 @@
-﻿global using CartApi.Data;
+﻿global using System.Text.Json;
 global using CartApi.Exceptions;
 global using CartApi.Models;
 global using CartApi.Models.Dto;

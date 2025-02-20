@@ -1,3 +1,6 @@
+using CartApi.Carts.DeleteCart.Data.Extensions;
+using CartApi.Carts.GetCartByCustomer.Data.Extensions;
+using CartApi.Carts.StoreCart.Data.Extensions;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
@@ -21,8 +24,10 @@ builder.Services.AddMarten(opts =>
     opts.Connection(connection);
 }).UseLightweightSessions();
 
-builder.Services.AddScoped<ICartRepository, CartRepository>();
-builder.Services.Decorate<ICartRepository, CachedCartRepository>();
+builder.Services
+    .AddGetCartFeature()
+    .AddStoreCartFeature()
+    .AddDeleteCartFeature();
 
 builder.Services.AddStackExchangeRedisCache(options =>
 {

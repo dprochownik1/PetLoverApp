@@ -1,6 +1,8 @@
-﻿namespace CartApi.Carts.StoreCart.RequestHandling;
+﻿using CartApi.Carts.StoreCart.Data.Repository;
 
-public class StoreCartHandler(ICartRepository repository) : ICommandHandler<StoreCartCommand, StoreCartResult>
+namespace CartApi.Carts.StoreCart.RequestHandling;
+
+public class StoreCartHandler(IStoreCartRepository repository) : ICommandHandler<StoreCartCommand, StoreCartResult>
 {
     public async Task<StoreCartResult> Handle(StoreCartCommand command, CancellationToken cancellationToken)
     {

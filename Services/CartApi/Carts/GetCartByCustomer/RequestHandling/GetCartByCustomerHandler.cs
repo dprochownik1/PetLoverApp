@@ -1,6 +1,8 @@
-﻿namespace CartApi.Carts.GetCartByCustomer.RequestHandling;
+﻿using CartApi.Carts.GetCartByCustomer.Data.Repository;
 
-public class GetCartHandler(ICartRepository repository) : IQueryHandler<GetCartByCustomerQuery, GetCartByCustomerResult>
+namespace CartApi.Carts.GetCartByCustomer.RequestHandling;
+
+public class GetCartHandler(IGetCartRepository repository) : IQueryHandler<GetCartByCustomerQuery, GetCartByCustomerResult>
 {
     public async Task<GetCartByCustomerResult> Handle(GetCartByCustomerQuery byCustomerQuery, CancellationToken cancellationToken)
     {

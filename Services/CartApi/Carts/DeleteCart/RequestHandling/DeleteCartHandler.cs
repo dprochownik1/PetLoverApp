@@ -1,7 +1,8 @@
-﻿namespace CartApi.Carts.DeleteCart.RequestHandling;
+﻿using CartApi.Carts.DeleteCart.Data.Repository;
 
-public class DeleteCartHandler(ICartRepository repository) 
-    : ICommandHandler<DeleteCartCommand, DeleteCartResult>
+namespace CartApi.Carts.DeleteCart.RequestHandling;
+
+public class DeleteCartHandler(IDeleteCartRepository repository) : ICommandHandler<DeleteCartCommand, DeleteCartResult>
 {
     public async Task<DeleteCartResult> Handle(DeleteCartCommand command, CancellationToken cancellationToken)
     {
