@@ -9,17 +9,18 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ProfileApi/ProfileApi.csproj", "ProfileApi/"]
-RUN dotnet restore "./ProfileApi/ProfileApi.csproj"
+COPY ["Services/CustomerApi/CustomerApi.csproj", "Services/CustomerApi/"]
+COPY ["Common.Lib/Common.Lib.csproj", "Common.Lib/"]
+RUN dotnet restore "./Services/CustomerApi/CustomerApi.csproj"
 COPY . .
-WORKDIR "/src/ProfileApi"
-RUN dotnet build "./ProfileApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/Services/CustomerApi"
+RUN dotnet build "./CustomerApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./ProfileApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./CustomerApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "ProfileApi.dll"]
+ENTRYPOINT ["dotnet", "CustomerApi.dll"]

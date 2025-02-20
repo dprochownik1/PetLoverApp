@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>ffd80d72-cf2e-46ba-8cb9-2274fdc10abe</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,19 +18,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Common.Lib\Common.Lib.csproj" />
+	  <ProjectReference Include="..\..\Common.Lib\Common.Lib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Models\Dto\" />
-    <Folder Include="Profiles\CreateProfile - Copy %282%29\Endpoint\" />
-    <Folder Include="Profiles\CreateProfile - Copy %282%29\RequestHandling\" />
-    <Folder Include="Profiles\CreateProfile - Copy %283%29\Endpoint\" />
-    <Folder Include="Profiles\CreateProfile - Copy %283%29\RequestHandling\" />
-    <Folder Include="Profiles\CreateProfile - Copy\Endpoint\" />
-    <Folder Include="Profiles\CreateProfile - Copy\RequestHandling\" />
-    <Folder Include="Profiles\CreateProfile\Endpoint\" />
-    <Folder Include="Profiles\CreateProfile\RequestHandling\" />
+    <Folder Include="Customers\GetCustomerById\Endpoint\" />
+    <Folder Include="Customers\GetCustomerById\RequestHandling\" />
+    <Folder Include="Customers\DeleteCustomer\Endpoint\" />
+    <Folder Include="Customers\DeleteCustomer\RequestHandling\" />
+    <Folder Include="Customers\UpdateCustomer\Endpoint\" />
+    <Folder Include="Customers\UpdateCustomer\RequestHandling\" />
+    <Folder Include="Customers\CreeateCustomer\Endpoint\" />
+    <Folder Include="Customers\CreeateCustomer\RequestHandling\" />
   </ItemGroup>
 
 </Project>
