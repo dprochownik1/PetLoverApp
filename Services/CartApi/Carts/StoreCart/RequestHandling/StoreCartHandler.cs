@@ -4,8 +4,8 @@ public class StoreCartHandler(ICartRepository repository) : ICommandHandler<Stor
 {
     public async Task<StoreCartResult> Handle(StoreCartCommand command, CancellationToken cancellationToken)
     {
-        await repository.StoreCart(command.Cart, cancellationToken);
+        var result = await repository.StoreCart(command.CartDto, cancellationToken);
 
-        return new StoreCartResult(command.Cart.CustomerId);
+        return new StoreCartResult(result);
     }
 }

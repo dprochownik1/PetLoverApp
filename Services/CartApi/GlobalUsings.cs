@@ -1,6 +1,7 @@
 ﻿global using CartApi.Data;
 global using CartApi.Exceptions;
 global using CartApi.Models;
+global using CartApi.Models.Dto;
 global using Common.Lib.CQRS;
 global using Carter;
 global using MediatR;

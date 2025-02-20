@@ -27,7 +27,7 @@ builder.Services.Decorate<ICartRepository, CachedCartRepository>();
 builder.Services.AddStackExchangeRedisCache(options =>
 {
     options.Configuration = builder.Configuration.GetConnectionString("Redis");
-    options.InstanceName = "Cart";
+    options.InstanceName = "CartDto";
 });
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();

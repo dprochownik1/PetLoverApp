@@ -2,7 +2,7 @@
 
 public class CartNotFoundException : NotFoundException
 {
-    public CartNotFoundException(Guid customerId) : base("Cart", customerId)
+    public CartNotFoundException(Guid customerId) : base("CartDto", customerId)
     {
     }
 }

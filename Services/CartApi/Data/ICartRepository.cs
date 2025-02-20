@@ -2,7 +2,7 @@
 
 public interface ICartRepository
 {
-    Task<Cart> GetCart(Guid customerId, CancellationToken cancellationToken = default);
-    Task<Cart> StoreCart(Cart cart, CancellationToken cancellationToken = default);
-    Task<bool> DeleteCart(Guid customerId, CancellationToken cancellationToken = default);
+    Task<CartDto> GetCart(Guid customerId, CancellationToken cancellationToken);
+    Task<Guid> StoreCart(CartDto cart, CancellationToken cancellationToken);
+    Task<bool> DeleteCart(Guid customerId, CancellationToken cancellationToken);
 }

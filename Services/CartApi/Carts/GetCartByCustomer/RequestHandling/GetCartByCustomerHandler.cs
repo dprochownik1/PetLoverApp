@@ -4,8 +4,8 @@ public class GetCartHandler(ICartRepository repository) : IQueryHandler<GetCartB
 {
     public async Task<GetCartByCustomerResult> Handle(GetCartByCustomerQuery byCustomerQuery, CancellationToken cancellationToken)
     {
-        var cart = await repository.GetCart(byCustomerQuery.CustomerId, cancellationToken);
+        var cartDto = await repository.GetCart(byCustomerQuery.CustomerId, cancellationToken);
 
-        return new GetCartByCustomerResult(cart);
+        return new GetCartByCustomerResult(cartDto);
     }
 }

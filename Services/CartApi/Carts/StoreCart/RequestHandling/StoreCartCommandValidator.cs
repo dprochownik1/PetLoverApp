@@ -4,7 +4,7 @@ public class StoreCartCommandValidator : AbstractValidator<StoreCartCommand>
 {
     public StoreCartCommandValidator()
     {
-        RuleFor(x => x.Cart).NotNull().WithMessage("Cart can not be null");
-        RuleFor(x => x.Cart.CustomerId).NotEmpty().WithMessage("CustomerId is required");
+        RuleFor(x => x.CartDto).NotNull().WithMessage("CartDto can not be null");
+        RuleFor(x => x.CartDto.CustomerId).NotEmpty().WithMessage("CustomerId is required");
     }
 }

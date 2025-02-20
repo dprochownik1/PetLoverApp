@@ -1,3 +1,3 @@
 ﻿namespace CartApi.Carts.StoreCart.Endpoint;
 
-public record StoreCartRequest(Cart Cart);
+public record StoreCartRequest(CartDto CartDto);
