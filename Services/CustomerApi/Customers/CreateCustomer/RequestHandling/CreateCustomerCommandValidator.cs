@@ -15,7 +15,7 @@ public class CreateCustomerCommandValidator : AbstractValidator<CreateCustomerCo
         RuleFor(x => x.Customer.Address.PostalCode).NotEmpty().Length(6);
         RuleFor(x => x.Customer.Address.Flat).MaximumLength(5);
         RuleFor(x => x.Customer.EmailAddress)
-            .NotEmpty().EmailAddress().WithMessage("Email address is invalid").MaximumLength(50);
+            .NotEmpty().EmailAddress().WithMessage("Email address is invalid").MaximumLength(200);
         RuleFor(x => x.Customer.PhoneNumber)
             .NotEmpty().Must(x => x.All(char.IsDigit)).WithMessage("Phone number is invalid").Length(9);
     }

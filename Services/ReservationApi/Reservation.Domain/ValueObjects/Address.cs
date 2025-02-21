@@ -5,6 +5,7 @@ public record Address
     public string Name { get; } = default!;
     public string LastName { get; } = default!;
     public string EmailAddress { get; } = default!;
+    public string PhoneNumber { get; } = default!;
     public string City { get; } = default!;
     public string Street { get; } = default!;
     public string Building { get; } = default!;
@@ -15,12 +16,13 @@ public record Address
     {
     }
 
-    private Address(string name, string lastName, string emailAddress, string city,
-        string street, string building, string flat, string postalCode)
+    private Address(string name, string lastName, string emailAddress, string phoneNumber,
+        string city, string street, string building, string flat, string postalCode)
     {
         Name = name;
         LastName = lastName;
         EmailAddress = emailAddress;
+        PhoneNumber = phoneNumber;
         City = city;
         Street = street;
         Building = building;
@@ -28,14 +30,18 @@ public record Address
         PostalCode = postalCode;
     }
 
-    public static Address Of(string name, string lastName, string emailAddress, string city,
-        string street, string building, string flat, string postalCode)
+    public static Address Of(string name, string lastName, string emailAddress, string phoneNumber,
+        string city, string street, string building, string flat, string postalCode)
     {
+        ArgumentException.ThrowIfNullOrWhiteSpace(phoneNumber);
         ArgumentException.ThrowIfNullOrWhiteSpace(city);
         ArgumentException.ThrowIfNullOrWhiteSpace(street);
         ArgumentException.ThrowIfNullOrWhiteSpace(building);
         ArgumentException.ThrowIfNullOrWhiteSpace(postalCode);
+        if (!phoneNumber.All(char.IsDigit)) 
+            throw new DomainException("Phone number is invalid");
 
-        return new Address(name, lastName, emailAddress, city, street, building, flat, postalCode);
+        return new Address(name, lastName, emailAddress, phoneNumber,
+            city, street, building, flat, postalCode);
     }
 }

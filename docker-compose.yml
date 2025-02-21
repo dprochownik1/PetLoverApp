@@ -13,6 +13,9 @@ services:
   customerdb:
     image: postgres
 
+  reservationdb:
+    image: postgres
+
   productapi:
     image: ${DOCKER_REGISTRY-}productapi
     build:
@@ -42,6 +45,7 @@ volumes:
   postgres_pet:
   postgres_cart:
   postgres_customer:
+  postgres_reservation:
 
 
 

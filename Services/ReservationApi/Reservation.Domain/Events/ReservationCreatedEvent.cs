@@ -1,3 +1,3 @@
 ﻿namespace Reservation.Domain.Events;
 
-public record ReservationCreatedEvent(ReservationEntity Reservation) : IDomainEvent;
+public record ReservationCreatedEvent(ReservationAggregate Reservation) : IDomainEvent;

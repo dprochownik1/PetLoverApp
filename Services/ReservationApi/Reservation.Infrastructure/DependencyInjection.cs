@@ -9,6 +9,10 @@ public static class DependencyInjection
         this IServiceCollection serviceCollection, IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+        serviceCollection.AddDbContext<ApplicationDbContext>(options =>
+            options.UseNpgsql(connectionString));
+
         return serviceCollection;
     }
 }
