@@ -1,5 +1,6 @@
 using Reservation.Application;
 using Reservation.Infrastructure;
+using Reservation.Infrastructure.Data.Extensions;
 using ReservationApi;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,5 +15,11 @@ builder.Services
 var app = builder.Build();
 
 //Configure the HTTP request pipeline.
+app.UseApiServices();
+
+if (app.Environment.IsDevelopment())
+{
+    await app.ApplyPendingMigrationsAsync();
+}
 
 app.Run();

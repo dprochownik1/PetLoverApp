@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Reservation.Infrastructure.Data.Interceptors;
 
 namespace Reservation.Infrastructure;
 
@@ -11,8 +12,11 @@ public static class DependencyInjection
         var connectionString = configuration.GetConnectionString("DefaultConnection");
 
         serviceCollection.AddDbContext<ApplicationDbContext>(options =>
-            options.UseNpgsql(connectionString));
-
+        {
+            options.AddInterceptors(new AuditableEntityInterceptor());
+            options.UseNpgsql(connectionString);
+        });
+        
         return serviceCollection;
     }
 }
