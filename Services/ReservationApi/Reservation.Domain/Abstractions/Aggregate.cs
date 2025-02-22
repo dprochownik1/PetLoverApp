@@ -10,10 +10,8 @@ public abstract class Aggregate<TId> : Entity<TId>, IAggregate<TId>
         _domainEvents.Add(domainEvent);
     }
 
-    public IEnumerable<IDomainEvent> ClearDomainEvents()
+    public void ClearDomainEvents()
     {
         _domainEvents.Clear();
-
-        return _domainEvents;
     }
 }

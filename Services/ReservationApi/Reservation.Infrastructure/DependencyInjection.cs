@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Reservation.Infrastructure.Data.Interceptors;
 
@@ -11,9 +12,12 @@ public static class DependencyInjection
     {
         var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-        serviceCollection.AddDbContext<ApplicationDbContext>(options =>
+        serviceCollection.AddScoped<ISaveChangesInterceptor, AuditingInterceptor>();
+        serviceCollection.AddScoped<ISaveChangesInterceptor, DomainEventsPublishingInterceptor>();
+
+        serviceCollection.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
         {
-            options.AddInterceptors(new AuditableEntityInterceptor());
+            options.AddInterceptors(serviceProvider.GetServices<ISaveChangesInterceptor>());
             options.UseNpgsql(connectionString);
         });
         
