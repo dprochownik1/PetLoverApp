@@ -29,13 +29,13 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reservation", "Reservation", "{A2A47D59-BB7E-400F-BF6E-55EAB62FF8E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationApi", "Services\ReservationApi\ReservationApi\ReservationApi.csproj", "{D6C611A5-76FC-411C-A6E4-B47D32AD48D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservationApi", "Services\ReservationApi\ReservationApi\ReservationApi.csproj", "{D6C611A5-76FC-411C-A6E4-B47D32AD48D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reservation.Domain", "Services\ReservationApi\Reservation.Domain\Reservation.Domain.csproj", "{6901CE4F-6E51-4A4E-9BA5-11DE35625251}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reservation.Domain", "Services\ReservationApi\Reservation.Domain\Reservation.Domain.csproj", "{6901CE4F-6E51-4A4E-9BA5-11DE35625251}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reservation.Application", "Services\ReservationApi\Reservation.Application\Reservation.Application.csproj", "{4106BF1B-CC6E-452B-B727-7D888B4C3AD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reservation.Application", "Services\ReservationApi\Reservation.Application\Reservation.Application.csproj", "{4106BF1B-CC6E-452B-B727-7D888B4C3AD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reservation.Infrastructure", "Services\ReservationApi\Reservation.Infrastructure\Reservation.Infrastructure.csproj", "{3AB80AC4-D41A-47DC-8ACA-899044D92278}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reservation.Infrastructure", "Services\ReservationApi\Reservation.Infrastructure\Reservation.Infrastructure.csproj", "{3AB80AC4-D41A-47DC-8ACA-899044D92278}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
