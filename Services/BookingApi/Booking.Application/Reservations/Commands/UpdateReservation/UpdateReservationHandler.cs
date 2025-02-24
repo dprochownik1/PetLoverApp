@@ -1,8 +1,4 @@
-﻿using Booking.Application.Data;
-using Booking.Application.Exception;
-using Booking.Domain.ValueObjects;
-
-namespace Booking.Application.Reservations.Commands.UpdateReservation;
+﻿namespace Booking.Application.Reservations.Commands.UpdateReservation;
 
 public class UpdateReservationHandler(IApplicationDbContext dbContext)
     : ICommandHandler<UpdateReservationCommand, UpdateReservationResult>

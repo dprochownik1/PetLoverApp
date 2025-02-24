@@ -1,8 +1,4 @@
-﻿using Booking.Application.Dto;
-using Booking.Domain.Models;
-using Booking.Domain.ValueObjects;
-
-namespace Booking.Application.Extensions;
+﻿namespace Booking.Application.Extensions;
 
 internal static class MappingConfiguration
 {
@@ -36,9 +32,9 @@ internal static class MappingConfiguration
                 dto.Expiration,
                 dto.Cvv));
 
-        TypeAdapterConfig<ReservationDto, ReservationModel>
+        TypeAdapterConfig<ReservationDto, Reservation>
             .NewConfig()
-            .ConstructUsing(dto => ReservationModel.Create(
+            .ConstructUsing(dto => Reservation.Create(
                 ReservationId.Of(dto.Id),
                 CustomerId.Of(dto.CustomerId),
                 dto.ReservationItem.Adapt<ReservationItem>(),
@@ -53,7 +49,7 @@ internal static class MappingConfiguration
             .Map(dest => dest.ReservationId, src => src.ReservationId.Value)
             .Map(dest => dest.ProductId, src => src.ProductId.Value);
 
-        TypeAdapterConfig<ReservationDto, ReservationModel>
+        TypeAdapterConfig<ReservationDto, Reservation>
             .NewConfig()
             .Map(dest => dest.Id, src => ReservationId.Of(src.Id))
             .Map(dest => dest.CustomerId, src => CustomerId.Of(src.CustomerId));

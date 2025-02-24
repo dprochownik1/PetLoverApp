@@ -1,7 +1,4 @@
-﻿using Booking.Application.Data;
-using Booking.Application.Dto;
-
-namespace Booking.Application.Reservations.Queries.GetReservations;
+﻿namespace Booking.Application.Reservations.Queries.GetReservations;
 
 public class GetReservationsHandler(IApplicationDbContext dbContext)
     : IQueryHandler<GetReservationsQuery, GetReservationsResult>

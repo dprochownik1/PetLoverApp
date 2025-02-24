@@ -6,13 +6,13 @@ namespace Booking.Application;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddApplicationServices(this IServiceCollection serviceCollection)
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        serviceCollection.AddMediatR(config =>
+        services.AddMediatR(config =>
             config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
         MappingConfiguration.RegisterMaps();
 
-        return serviceCollection;   
+        return services;   
     }
 }

@@ -9,21 +9,20 @@ namespace Booking.Infrastructure;
 public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructureServices(
-        this IServiceCollection serviceCollection, IConfiguration configuration)
+        this IServiceCollection services, IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-        serviceCollection.AddScoped<IApplicationDbContext, ApplicationDbContext>();
-        serviceCollection.AddScoped<ISaveChangesInterceptor, AuditingInterceptor>();
-        serviceCollection.AddScoped<ISaveChangesInterceptor, DomainEventsPublishingInterceptor>();
+        services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+        services.AddScoped<ISaveChangesInterceptor, AuditingInterceptor>();
+        services.AddScoped<ISaveChangesInterceptor, DomainEventsPublishingInterceptor>();
 
-        serviceCollection.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
+        services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
         {
             options.AddInterceptors(serviceProvider.GetServices<ISaveChangesInterceptor>());
             options.UseNpgsql(connectionString);
         });
 
-        
-        return serviceCollection;
+        return services;
     }
 }

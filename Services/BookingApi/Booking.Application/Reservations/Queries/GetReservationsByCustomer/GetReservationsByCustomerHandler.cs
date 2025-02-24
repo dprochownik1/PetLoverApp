@@ -1,8 +1,4 @@
-﻿using Booking.Application.Data;
-using Booking.Application.Dto;
-using Booking.Domain.ValueObjects;
-
-namespace Booking.Application.Reservations.Queries.GetReservationsByCustomer;
+﻿namespace Booking.Application.Reservations.Queries.GetReservationsByCustomer;
 
 public class GetReservationsByCustomerHandler(IApplicationDbContext dbContext)
     : IQueryHandler<GetReservationByCustomerQuery, GetReservationsByCustomerResult>

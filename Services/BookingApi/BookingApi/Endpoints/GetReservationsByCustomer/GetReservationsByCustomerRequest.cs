@@ -1,0 +1,3 @@
+﻿namespace BookingApi.Endpoints.GetReservationsByCustomer;
+
+public record GetReservationsByCustomerRequest(Guid CustomerId);

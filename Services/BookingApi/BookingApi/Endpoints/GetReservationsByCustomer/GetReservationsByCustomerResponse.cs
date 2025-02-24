@@ -1,0 +1,3 @@
+﻿namespace BookingApi.Endpoints.GetReservationsByCustomer;
+
+public record GetReservationsByCustomerResponse(IEnumerable<ReservationDto> Reservations);

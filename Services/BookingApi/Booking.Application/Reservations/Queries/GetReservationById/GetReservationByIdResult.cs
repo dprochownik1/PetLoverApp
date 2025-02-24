@@ -1,0 +1,3 @@
+﻿namespace Booking.Application.Reservations.Queries.GetReservationById;
+
+public record GetReservationByIdResult(ReservationDto ReservationDto);
