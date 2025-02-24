@@ -8,6 +8,7 @@ global using Mapster;
 global using Microsoft.EntityFrameworkCore;
 global using Reservation.Application.Data;
 global using Reservation.Application.Dto;
+global using Reservation.Application.Exception;
 global using Reservation.Domain.Models;
 global using Reservation.Domain.ValueObjects;
 global using ReservationModel = Reservation.Domain.Models.Reservation;

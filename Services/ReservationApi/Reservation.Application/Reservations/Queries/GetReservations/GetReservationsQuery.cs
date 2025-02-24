@@ -1,4 +1,3 @@
 ﻿namespace Reservation.Application.Reservations.Queries.GetReservations;
 
-public record GetReservationsQuery(PaginationRequest PaginationRequest) 
-    : IQuery<GetReservationsResult>;
+public record GetReservationsQuery(PaginationRequest PaginationRequest) : IQuery<GetReservationsResult>;

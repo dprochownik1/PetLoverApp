@@ -1,4 +1,5 @@
 ﻿namespace Reservation.Application.Reservations.Queries.GetReservations;
+
 public class GetReservationsHandler(IApplicationDbContext dbContext)
     : IQueryHandler<GetReservationsQuery, GetReservationsResult>
 {
@@ -11,6 +12,7 @@ public class GetReservationsHandler(IApplicationDbContext dbContext)
 
         var reservations = await dbContext.Reservations
                        .Include(r => r.ReservationItem)
+                       .AsNoTracking()
                        .OrderByDescending(r => r.Date)
                        .Skip(pageSize * pageIndex)
                        .Take(pageSize)

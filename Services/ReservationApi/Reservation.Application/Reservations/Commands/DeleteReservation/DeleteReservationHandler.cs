@@ -1,6 +1,4 @@
-﻿using Reservation.Application.Exception;
-
-namespace Reservation.Application.Reservations.Commands.DeleteReservation;
+﻿namespace Reservation.Application.Reservations.Commands.DeleteReservation;
 public class DeleteReservationHandler(IApplicationDbContext dbContext)
     : ICommandHandler<DeleteReservationCommand, DeleteReservationResult>
 {

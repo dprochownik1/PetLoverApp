@@ -69,7 +69,7 @@ public class ReservationConfiguration : IEntityTypeConfiguration<ReservationMode
                 paymentBuilder.Property(p => p.Expiration)
                     .HasMaxLength(10);
 
-                paymentBuilder.Property(p => p.CVV)
+                paymentBuilder.Property(p => p.Cvv)
                     .HasMaxLength(3);
             });
 

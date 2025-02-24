@@ -176,7 +176,7 @@ namespace Reservation.Infrastructure.Data.Migrations
                         {
                             b1.IsRequired();
 
-                            b1.Property<string>("CVV")
+                            b1.Property<string>("Cvv")
                                 .IsRequired()
                                 .HasMaxLength(3)
                                 .HasColumnType("character varying(3)");
