@@ -1,6 +1,8 @@
-﻿namespace Reservation.Infrastructure.Data;
+﻿using Reservation.Application.Data;
 
-public class ApplicationDbContext : DbContext
+namespace Reservation.Infrastructure.Data;
+
+public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
