@@ -34,12 +34,11 @@ public record Address
         string city, string street, string building, string flat, string postalCode)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(phoneNumber);
+        DomainException.ThrowIfNotAllCharsAreDigit(phoneNumber);
         ArgumentException.ThrowIfNullOrWhiteSpace(city);
         ArgumentException.ThrowIfNullOrWhiteSpace(street);
         ArgumentException.ThrowIfNullOrWhiteSpace(building);
         ArgumentException.ThrowIfNullOrWhiteSpace(postalCode);
-        if (!phoneNumber.All(char.IsDigit)) 
-            throw new DomainException("Phone number is invalid");
 
         return new Address(name, lastName, emailAddress, phoneNumber,
             city, street, building, flat, postalCode);

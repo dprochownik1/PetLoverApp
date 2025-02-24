@@ -25,7 +25,8 @@ public class UpdateReservationHandler(IApplicationDbContext dbContext)
     {
         var addressDto = reservationDto.BillingAddress;
         var paymentDto = reservationDto.Payment;
-        var updatedBillingAddress = Address.Of(addressDto.Name, addressDto.LastName, addressDto.EmailAddress, addressDto.PhoneNumber, addressDto.City, addressDto.Street, addressDto.Building, addressDto.Flat, addressDto.PostalCode );
+        var updatedBillingAddress = Address.Of(addressDto.Name, addressDto.LastName, addressDto.EmailAddress,
+            addressDto.PhoneNumber, addressDto.City, addressDto.Street, addressDto.Building, addressDto.Flat, addressDto.PostalCode );
         var updatedPayment = Payment.Of(paymentDto.CardNumber, paymentDto.Expiration, paymentDto.Cvv);
 
         reservation.Update(
