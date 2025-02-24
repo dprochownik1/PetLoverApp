@@ -49,17 +49,17 @@ services:
     volumes:
       - postgres_customer:/var/lib/postgresql/data/
 
-  reservationdb:
-    container_name: reservationdb
+  bookingdb:
+    container_name: bookingdb
     environment:
      - POSTGRES_USER=postgres
      - POSTGRES_PASSWORD=postgres
-     - POSTGRES_DB=ReservationDb
+     - POSTGRES_DB=BookingDb
     restart: always
     ports:
        - "5436:5432"
     volumes:
-      - postgres_reservation:/var/lib/postgresql/data/
+      - postgres_booking:/var/lib/postgresql/data/
 
   productapi:
     environment:

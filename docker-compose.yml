@@ -13,7 +13,7 @@ services:
   customerdb:
     image: postgres
 
-  reservationdb:
+  bookingdb:
     image: postgres
 
   productapi:
@@ -45,7 +45,7 @@ volumes:
   postgres_pet:
   postgres_cart:
   postgres_customer:
-  postgres_reservation:
+  postgres_booking:
 
 
 
