@@ -13,8 +13,8 @@ public class ReservationUpdatedEventHandler(IPublishEndpoint publishEndpoint,
     {
         if (featureManager.IsEnabledAsync(ReservationFulfillment).GetAwaiter().GetResult())
         {
-            var orderCreatedIntegrationEvent = domainEvent.Reservation.Adapt<ReservationUpdatedEvent>();
-            await publishEndpoint.Publish(orderCreatedIntegrationEvent, cancellationToken);
+            var reservationUpdatedEvent = domainEvent.Reservation.Adapt<ReservationUpdatedEvent>();
+            await publishEndpoint.Publish(reservationUpdatedEvent, cancellationToken);
         }
 
         logger.LogInformation($"Domain Event handled: {domainEvent.GetType().Name}");
