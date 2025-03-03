@@ -3,5 +3,5 @@
 public class Cart
 {
     public Guid CustomerId { get; set; }
-    public IEnumerable<CartItem> Items { get; set; } = default!;
+    public ICollection<CartItem> Items { get; set; } = default!;
 }

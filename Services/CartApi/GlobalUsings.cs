@@ -1,4 +1,6 @@
 ﻿global using System.Text.Json;
+global using CartApi.Data.Abstractions;
+global using CartApi.Data.Repository;
 global using CartApi.Exceptions;
 global using CartApi.Models;
 global using CartApi.Models.Dto;
@@ -11,3 +13,4 @@ global using Common.Lib.Behaviors;
 global using Common.Lib.Exceptions;
 global using Marten;
 global using Common.Lib.Exceptions.Handler;
+global using Common.Lib.Messaging.Events;

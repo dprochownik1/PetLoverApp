@@ -17,7 +17,7 @@ public class StoreCartEndpoint : ICarterModule
 
                 return Results.Created($"/cart/{response.CustomerId}", response);
             })
-            .WithName("StoreCart")
+            .WithName("StoreCartAsync")
             .Produces<StoreCartResponse>(StatusCodes.Status201Created)
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesValidationProblem();

@@ -2,4 +2,4 @@
 
 public record CartDto(
     Guid CustomerId, 
-    IEnumerable<CartItemDto> Items);
+    ICollection<CartItemDto> Items);

@@ -16,7 +16,7 @@ public class DeleteCartEndpoint : ICarterModule
 
                 return Results.Ok(response);
             })
-            .WithName("DeleteCart")
+            .WithName("DeleteCartAsync")
             .Produces<DeleteCartResponse>()
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status404NotFound)

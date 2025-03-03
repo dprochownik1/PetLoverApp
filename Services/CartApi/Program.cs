@@ -1,6 +1,4 @@
-using CartApi.Carts.DeleteCart.Data.Extensions;
-using CartApi.Carts.GetCartByCustomer.Data.Extensions;
-using CartApi.Carts.StoreCart.Data.Extensions;
+using CartApi.Data.Extensions;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
@@ -11,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 var assembly = typeof(Program).Assembly;
 var connection = builder.Configuration.GetConnectionString("DefaultConnection")!;
 
+builder.Services.AddConfiguration(builder.Configuration);
 builder.Services.AddCarter();
 builder.Services.AddMediatR(config =>
 {
@@ -24,16 +23,14 @@ builder.Services.AddMarten(opts =>
     opts.Connection(connection);
 }).UseLightweightSessions();
 
-builder.Services
-    .AddGetCartFeature()
-    .AddStoreCartFeature()
-    .AddDeleteCartFeature();
-
 builder.Services.AddStackExchangeRedisCache(options =>
 {
     options.Configuration = builder.Configuration.GetConnectionString("Redis");
     options.InstanceName = "CartDto";
 });
+
+builder.Services.AddCartRepository();
+builder.Services.AddMessageBroker();
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
