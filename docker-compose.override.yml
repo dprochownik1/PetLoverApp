@@ -37,6 +37,12 @@ services:
     volumes:
       - postgres_cart:/var/lib/postgresql/data/
 
+  distributedcache:
+    container_name: distributedcache
+    restart: always
+    ports:
+      - "6379:6379"
+
   customerdb:
     container_name: customerdb
     environment:
@@ -54,13 +60,23 @@ services:
     environment:
      - POSTGRES_USER=postgres
      - POSTGRES_PASSWORD=postgres
-     - POSTGRES_DB=BookingDb
+     - POSTGRES_DB=CartDb
     restart: always
     ports:
        - "5436:5432"
     volumes:
       - postgres_booking:/var/lib/postgresql/data/
 
+  messagebroker:
+    container_name: messagebroker
+    hostname: petlover-mq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    restart: always
+    ports:
+      - "5672:5672"
+- 
   productapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
@@ -105,6 +121,16 @@ services:
       - customerdb
     ports:
       - "6004:8080"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+  bookingapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "6002:8080"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro

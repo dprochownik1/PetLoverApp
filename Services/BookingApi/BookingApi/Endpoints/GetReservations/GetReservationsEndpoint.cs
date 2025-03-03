@@ -6,10 +6,10 @@ public class GetReservationsEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("/reservations",
-                async ([AsParameters] GetReservationsRequest request, ISender sender) =>
+        var producesValidationProblem = app.MapGet("/reservations",
+                async ([AsParameters] PaginationRequest request, ISender sender) =>
                 {
-                    var query = request.Adapt<GetReservationsQuery>();
+                    var query = new GetReservationsQuery(request);
                     var result = await sender.Send(query);
 
                     return Results.Ok(result.Adapt<GetReservationsResponse>());

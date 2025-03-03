@@ -10,6 +10,12 @@ public static class ServiceExtensions
     {
         services.AddScoped<ICartRepository, CartRepository>();
         services.Decorate<ICartRepository, CartCachedRepository>();
+        services.AddScoped<IGetCartRepository, CartRepository>();
+        services.Decorate<IGetCartRepository, CartCachedRepository>();
+        services.AddScoped<IStoreCartRepository, CartRepository>();
+        services.Decorate<IStoreCartRepository, CartCachedRepository>();
+        services.AddScoped<IDeleteCartRepository, CartRepository>();
+        services.Decorate<IDeleteCartRepository, CartCachedRepository>();
 
         return services;
     }

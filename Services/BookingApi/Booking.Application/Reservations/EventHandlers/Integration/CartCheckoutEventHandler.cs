@@ -9,7 +9,7 @@ public class CartCheckoutEventHandler(ISender sender, ILogger<CartCheckoutEventH
 {
     public async Task Consume(ConsumeContext<CartCheckoutEvent> context)
     {
-        var command = context.Message.Adapt<CreateReservationCommand>();
+        var command = new CreateReservationCommand(context.Message.Adapt<ReservationDto>());
         await sender.Send(command);
 
         logger.LogInformation($"Integration Event handled: {context.Message.GetType().Name}");

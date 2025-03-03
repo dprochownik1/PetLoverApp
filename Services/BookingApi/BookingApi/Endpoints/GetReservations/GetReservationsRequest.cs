@@ -1,3 +1,0 @@
-﻿namespace BookingApi.Endpoints.GetReservations;
-
-public record GetReservationsRequest(PaginationRequest PaginationRequest);

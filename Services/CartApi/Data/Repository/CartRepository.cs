@@ -19,6 +19,7 @@ public class CartRepository(IDocumentSession session) : ICartRepository
 
     public async Task<Guid> StoreCartAsync(CartDto cartDto, CancellationToken cancellationToken)
     {
+        var cart = cartDto.Adapt<Cart>();
         session.Store(cartDto);
         await session.SaveChangesAsync(cancellationToken);
         return cartDto.CustomerId;

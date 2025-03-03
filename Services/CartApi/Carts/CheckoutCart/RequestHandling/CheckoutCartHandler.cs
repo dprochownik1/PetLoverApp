@@ -19,16 +19,16 @@ public class CheckoutCartHandler(ICartRepository repository, IPublishEndpoint pu
         var cartCheckoutEvent = command.CartCheckout.Adapt<CartCheckoutEvent>();
         await publishEndpoint.Publish(cartCheckoutEvent, cancellationToken);
 
-        cart.Items.Remove(cartItem);
+        //cart.Items.Remove(cartItem);
 
-        if (cart.Items.IsEmpty())
-        {
-            await repository.DeleteCartAsync(command.CartCheckout.CustomerId, cancellationToken);
+        //if (cart.Items.IsEmpty())
+        //{
+        //    await repository.DeleteCartAsync(command.CartCheckout.CustomerId, cancellationToken);
 
-            return result;
-        }
+        //    return result;
+        //}
 
-        await repository.StoreCartAsync(cart, cancellationToken);
+        //await repository.StoreCartAsync(cart, cancellationToken);
 
         return result;
     }

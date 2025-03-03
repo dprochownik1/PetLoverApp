@@ -10,11 +10,17 @@ services:
   cartdb:
     image: postgres
 
+  distributedcache:
+    image: redis
+
   customerdb:
     image: postgres
 
   bookingdb:
     image: postgres
+
+  messagebroker:
+    image: rabbitmq:management
 
   productapi:
     image: ${DOCKER_REGISTRY-}productapi
@@ -40,12 +46,19 @@ services:
       context: .
       dockerfile: Services/CustomerApi/Dockerfile
 
+  bookingapi:
+    image: ${DOCKER_REGISTRY-}bookingapi
+    build:
+      context: .
+      dockerfile: Services/BookingApi/BookingApi/Dockerfile
+
 volumes: 
   postgres_product:
   postgres_pet:
   postgres_cart:
   postgres_customer:
   postgres_booking:
+
 
 
 
