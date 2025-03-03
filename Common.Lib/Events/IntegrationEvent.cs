@@ -1,4 +1,4 @@
-﻿namespace Common.Lib.Messaging.Events;
+﻿namespace Common.Lib.Events;
 
 public record IntegrationEvent
 {

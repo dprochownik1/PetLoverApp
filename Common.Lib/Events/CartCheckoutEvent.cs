@@ -1,9 +1,12 @@
-﻿namespace Common.Lib.Messaging.Events;
+﻿namespace Common.Lib.Events;
 
 public record CartCheckoutEvent : IntegrationEvent
 {
     public Guid CustomerId { get; set; } = default!;
-    public decimal Price { get; set; } = default!;
+    public Guid ProductId { get; set; } = default!;
+    public string ProductName { get; set; } = default!;
+    public decimal ProductPrice { get; set; } = default!;
+    public TimeSpan ProductDuration { get; set; } = default!;
     public string Name { get; set; } = default!;
     public string LastName { get; set; } = default!;
     public string EmailAddress { get; set; } = default!;
@@ -16,4 +19,5 @@ public record CartCheckoutEvent : IntegrationEvent
     public string CardNumber { get; set; } = default!;
     public string Expiration { get; set; } = default!;
     public string Cvv { get; set; } = default!;
+    public DateTime Date { get; set; } = default!;
 }

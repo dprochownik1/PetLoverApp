@@ -41,6 +41,8 @@ public static class ServiceExtensions
     {
         services.Configure<MessageBrokerConfiguration>(configuration.GetSection(nameof(MessageBrokerConfiguration)));
 
+        MappingConfiguration.RegisterMaps();
+
         return services;
     }
 }

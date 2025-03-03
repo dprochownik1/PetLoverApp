@@ -10,7 +10,7 @@ global using MediatR;
 global using Mapster;
 global using FluentValidation;
 global using Common.Lib.Behaviors;
+global using Common.Lib.Events;
 global using Common.Lib.Exceptions;
 global using Marten;
 global using Common.Lib.Exceptions.Handler;
-global using Common.Lib.Messaging.Events;
