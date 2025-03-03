@@ -1,4 +1,7 @@
-﻿namespace Booking.Application.Extensions;
+﻿using Booking.Domain.Enums;
+using Common.Lib.Events;
+
+namespace Booking.Application.Extensions;
 
 internal static class MappingConfiguration
 {
@@ -43,6 +46,10 @@ internal static class MappingConfiguration
                 dto.Date
             ));
 
+        TypeAdapterConfig<CartCheckoutEvent, ReservationDto>
+            .NewConfig()
+            .ConstructUsing(checkoutEvent => MapCartCheckoutEvent(checkoutEvent));
+        
         TypeAdapterConfig<ReservationItem, ReservationItemDto>
             .NewConfig()
             .Map(dest => dest.Id, src => src.Id.Value)
@@ -53,5 +60,41 @@ internal static class MappingConfiguration
             .NewConfig()
             .Map(dest => dest.Id, src => ReservationId.Of(src.Id))
             .Map(dest => dest.CustomerId, src => CustomerId.Of(src.CustomerId));
+    }
+
+    private static ReservationDto MapCartCheckoutEvent(CartCheckoutEvent checkoutEvent)
+    {
+        var reservationId = Guid.NewGuid();
+
+        var reservationItem = new ReservationItemDto(
+            Guid.NewGuid(),
+            reservationId,
+            checkoutEvent.ProductId,
+            checkoutEvent.ProductPrice);
+
+        var address = new AddressDto(
+            checkoutEvent.Name,
+            checkoutEvent.LastName,
+            checkoutEvent.EmailAddress,
+            checkoutEvent.PhoneNumber,
+            checkoutEvent.City,
+            checkoutEvent.Street,
+            checkoutEvent.Building,
+            checkoutEvent.Flat,
+            checkoutEvent.PostalCode);
+
+        var payment = new PaymentDto(
+            checkoutEvent.CardNumber,
+            checkoutEvent.Expiration,
+            checkoutEvent.Cvv);
+
+        return new ReservationDto(
+            reservationId,
+            Guid.NewGuid(),
+            reservationItem,
+            address,
+            payment,
+            ReservationStatus.Pending,
+            checkoutEvent.Date);
     }
 }
